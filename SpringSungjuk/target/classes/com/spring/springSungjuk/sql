@@ -1,0 +1,63 @@
+create table student(
+                    hakbun number(10) not null,
+                    irum varchar2(10) not null,
+                    password varchar2(15) not null, 
+                    primary key(hakbun)
+);
+
+
+create table student_sungjuk(
+                    hakbun number(10),
+                    kor number(3),
+                    eng number(3),
+                    math number(3),
+                    tot number(3),
+                    avg number(5, 2),
+                    grade varchar2(3)
+);
+
+select * from  ( select * from student a left join student_sungjuk b on a.hakbun = b.hakbun)  where hakbun = 77;
+select * from student_sungjuk where hakbun in ( select hakbun from student where hakbun = 77);
+
+
+select * from student, student_sungjuk a  where a.hakbun in ( select hakbun from student where hakbun = 77);
+
+Select      A.Col1, B.Col2
+From        tbl_AJoin   A
+Left Join   tbl_BJoin   B   On  A.col1 = B.col1;
+
+select * from student a left join student_sungjuk b on a.hakbun = b.hakbun;
+
+select * from student, student_sungjuk sungjuk where sungjuk.hakbun = student.hakbun;
+
+
+
+
+alter table student_sungjuk add constraint fk_student_hakbun FOREIGN KEY(hakbun) REFERENCES student(hakbun);
+
+desc student;
+desc student_sungjuk;
+select * from student where hakbun  != 1001;
+insert into student values(1001, 'admin', 123);
+
+select * from student where hakbun != 1001 order by irum ;
+
+select * from student_sungjuk;
+-- 77
+insert into student_sungjuk values(77,100, 100, 100, 300, 100, 'A+');
+
+
+
+select * from  ( select * from student a left join student_sungjuk b on a.hakbun = b.hakbun)  where hakbun = 77;
+
+select * from student a, student_sungjuk b where b.hakbun = 77 and  a.hakbun = b.hakbun;
+
+
+
+
+delete from student where hakbun = 123;
+
+
+
+
+

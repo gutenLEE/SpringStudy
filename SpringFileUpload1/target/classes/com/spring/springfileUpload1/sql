@@ -1,0 +1,25 @@
+
+이름       널?       유형           
+-------- -------- ------------ 
+ID       NOT NULL VARCHAR2(15) 
+PASSWORD          VARCHAR2(10) 
+NAME              VARCHAR2(15) 
+AGE               NUMBER       
+GENDER            VARCHAR2(5)  
+EMAIL             VARCHAR2(30) 
+
+
+create table smemberboard2(
+    num number, 
+    id varchar2(20),
+    subject varchar2(50), 
+    content varchar2(2000),
+    org_file varchar2(50), // 오리지날 파일 이름
+    up_file varchar2(50), // 업로드된 파일 이름
+    re_ref number,
+    re_lev number,
+    re_seq number,
+    readcount number,
+    boarddate date,
+    primary key(num)
+);

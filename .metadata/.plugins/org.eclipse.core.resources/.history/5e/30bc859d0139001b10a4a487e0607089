@@ -1,0 +1,6 @@
+package com.spring.springwebsocket2;
+
+public class MemberServiceImpl implements MemberService {
+	
+	
+}

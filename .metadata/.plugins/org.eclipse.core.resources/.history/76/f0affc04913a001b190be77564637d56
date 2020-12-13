@@ -1,0 +1,64 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+    <style>
+        .map_wrap {position : relative; width: 100%; height: 400px;}
+        .title{font-weight: bold; display: block;}
+        #centerAddr{display: block; margin-top: 2px; font-weight: normal;}
+    </style>
+</head>
+<body>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c6bb98dfa3dc2ce3f444206e574ea27d"></script>
+<div class="map_wrap">
+    <div id="map" style="width: 100%; height: 100%; position: relative; overflow: hidden;"></div>
+</div>
+
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c6bb98dfa3dc2ce3f444206e574ea27d&libraries=services,clusterer,drawing"></script>
+<script>
+	var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+	mapOption = { 
+	    center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+	    level: 3 // 지도의 확대 레벨
+	};
+    var map = new kakao.maps.Map(mapContainer, mapOption);
+
+    var geocoder = new kakao.maps.services.Geocoder();
+
+    var marker = new kakao.maps.Marker();
+    var infowindow = new kakao.maps.infowindow({zindex : 1});
+
+    var latlng = null;
+
+    kakao.maps.event.addListener(map, 'click', function(e){
+    	
+        searchDetailAddrFromCoords(e.latLng, function(result, status){ // result가 주소를 전달 받는다. status 상태정보 저장된다.        	
+            if(status === kakao.maps.services.Status.OK){
+                var detailAddr = !!result[0].road_address ? '<div>도로명 주소 : ' + result[0].road_address.address_name + 
+                    '</div>' : '';
+                    detailAddr += '<div>지번 주소 : ' + result[0].address.address_name + '</div>';
+                var content = '<div class="bAddr">' + '<span class="title">법정동 주소정보</span>' + detailAddr + '</div>'; 
+
+                latlng = e.latlng; 
+                marker.setPosition(latlng);
+                marker.setMap(map);
+                map.setCenter(latlng);
+                infowindow.setContent(content);
+                infowindow.open(map, marker);
+            }
+        })
+    })
+
+    function searchDetailAddrFromCoords(coods, callback_addr){ // callback_addr 콜백함수 : function(result, status){...}
+        geocoder.coord2Address(coords.getLng(), coords.getLat(), callback_addr);
+    }
+
+    kakao.maps.event.addListener(map, 'idle', function(){
+        map.setCenter(latlng);
+    })
+</script>
+</body>
+</html>

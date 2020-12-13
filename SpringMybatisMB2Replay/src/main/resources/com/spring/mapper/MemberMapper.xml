@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 
+create table tap_mybatis (
+  id varchar2(30) primary key,
+  name varchar2(30),
+  email varchar2(30),
+  phone varchar2(30)
+);
+
+insert into tab_mybatis values ('A001', '이기자', 'A001@daum.net', '010-1111-1111');
+insert into tab_mybatis values ('A002', '김기자', 'A002@daum.net', '010-2222-2222');
+insert into tab_mybatis values ('A003', '박기자', 'A003@daum.net', '010-3333-3333');
+insert into tab_mybatis values ('A004', '길기자', 'A004@daum.net', '010-4444-4444');
+insert into tab_mybatis values ('A005', '홍기자', 'A005@daum.net', '010-5555-5555');
+commit;
+-->
+<!-- namespace="com.spring.mapper.MemberMapper는 MemberMapper인퍼페이스(MemberMapper.class)의 이름을 사용한다. -->
+<mapper namespace="com.spring.mapper.MemberMapper">
+
+	
+	<!--######### 여기부터 내 쿼리 ######### -->
+	
+	<insert id="insertMember" parameterType="MemberVO" >
+		insert into smember values(#{id}, #{password}, #{name}, #{name}, #{age, javaType=Integer}, #{email})
+	</insert>
+	
+	<select id="getMemberlist" resultType="MemberVO">
+		SELECT * FROM smember ORDER BY ID
+	</select>
+	
+	<select id="selectMember" parameterType="MemberVO" resultType="MemberVO">
+		SELECT * from smember where id = #{id}
+	</select>	
+	
+	<delete id="deleteMember" parameterType="MemberVO" >
+		DELETE from smember where id = #{id}
+	</delete>
+	
+	<!-- 
+		userCheck 
+		select count(*) from smember where id = ? and password = ?
+	 -->
+
+</mapper>

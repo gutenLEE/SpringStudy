@@ -1,0 +1,76 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+ <!--  <link rel="stylesheet" href="reset.css"> -->
+    <style>
+        .main-container{
+            background:#262626;
+            width: 500px;
+            height: 600px;
+            position: relative;
+            margin: 0 auto;
+            margin-top: 23px;
+            border-radius: 8px;
+        }
+        .element {
+		  clip: rect(10px, 20px, 30px, 40px);
+		}
+		.box{
+			margin: 0 auto;
+			padding-top: 100px;
+			color : white;
+			display : flex;
+			flex-direction : column;
+			justify-content : center;
+			align-items: center;
+
+		}
+		input{
+			background : #262626;
+			border : none;
+			border-bottom : 1px solid rgba(234, 212, 3, 0.2);
+			line-height : 40px;
+			font-size : 1em;
+			color: white;
+		}
+		a{
+			color: gold;
+			text-decoration : none;
+			padding-top: 10px;
+		}
+
+		th{
+			border : 1px solid rgba(234, 212, 3, 0.2);
+			th : 80px;
+		}
+    </style>
+    <%
+    	String id = (String)session.getAttribute("id");
+     	String pw = (String)session.getAttribute("pw");
+    %>
+</head>
+<body>
+  <section>
+      <div class="main-container">
+			<table class="box">
+				<tr>
+					<th>닉네임</th>
+					<th>상태</th>
+					<th style="width :150px;">메세지 보내기</th>
+					<th style="width : 100px;">받은 메세지</th>
+				</tr>
+			</table>
+      </div>
+  </section>
+  
+ <script>
+ 	const parent = document.querySelector('.main-container');
+ 	var boxElem = document.createElement('div'); 	 	
+ 	
+ </script>
+</body>
+</html>

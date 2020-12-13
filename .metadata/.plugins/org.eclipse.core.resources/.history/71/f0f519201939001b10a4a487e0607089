@@ -1,0 +1,43 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<%@ page session  = "true" %>
+<% 
+	// 목적음
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script>
+	var log = function(s) {
+		document.getElementById("output").textContent += (s + "\n");
+	}
+	w = new
+	WebSocket("ws://localhost:8080/springwebsocket2/broadcasting.do");
+	w.onopen = function(){
+		alert('WebSocket connected !');
+	}
+	w.onmessage = function(e){
+		log(e.data.toString());
+	}
+	w.onclose = function(e){
+		log('webSocket closed');
+	}
+	w.onerror = function(e){
+		log("webSocket error !! : " + e.data);
+	}
+	
+	window.onload = function(){
+		document.getElementById("send_button").onclick = function(){
+			var input = document.getElementById("input").value;
+			w.send("<%=id%>" + ">" + input );
+			
+		}
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

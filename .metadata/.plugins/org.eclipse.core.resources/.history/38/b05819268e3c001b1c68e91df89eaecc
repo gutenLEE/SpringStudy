@@ -1,0 +1,53 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
+<%@ page import="java.util.ArrayList"%>
+<%
+	ArrayList<String> title = (ArrayList<String>) request.getAttribute("title");
+//	ArrayList<String> title_link = (ArrayList<String>) request.getAttribute("title_link");
+
+	ArrayList<String> rank1 = (ArrayList<String>) request.getAttribute("rank1");
+%>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>네이버 스포츠 뉴스 크롤링</title>
+<style>
+	td{
+		text-align : center;
+	}
+</style>
+</head>
+<body>
+	<br />
+	<table border="0" align="center">
+		 <tr align="center">
+		<%
+			for (int i=0; i<title.size(); i++)
+			{
+		%>
+	      	<td><%=title.get(i).toString()%></td>
+		<%
+			}
+		%>
+	 	</tr>
+		<tr align="center">
+			<td>순위</td>
+			<td>영화제목</td>
+			<td>평점</td>
+		</tr>
+
+		<%
+			for (int i = 0; i < rank1.size(); i++) {
+		%>
+		<tr>
+			<td><%=i + 1%>위 &nbsp;</td>
+			<td><%=rank1.get(i).toString()%></td>
+		</tr>
+		<%
+			}
+		%>
+	</table>
+</body>
+</html>

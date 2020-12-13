@@ -1,0 +1,37 @@
+package com.spring.springwebsocket2;
+
+import java.util.Locale;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+/**
+ * Handles requests for the application home page.
+ */
+@Controller
+public class HomeController {
+	
+	@Autowired
+	MemberService memberDAO;
+	
+	@RequestMapping(value = "loginForm.do")
+	public String home() {
+		return "loginForm";
+	}
+	@RequestMapping(value = "joinForm.do")
+	public String joinForm() {
+		return "joinForm";
+	}
+	
+	@RequestMapping(value = "client_chat.do", method=RequestMethod.GET)
+	public String clientChat() {
+		return "client_chat";
+	}
+	@RequestMapping(value = "memberinsert.do")
+	public String memberinsert() {
+		return "loginForm";
+	}
+}

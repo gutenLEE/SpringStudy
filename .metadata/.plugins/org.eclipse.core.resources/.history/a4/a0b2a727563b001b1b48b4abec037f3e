@@ -1,0 +1,37 @@
+package com.spring.springjsoup;
+
+import java.io.IOException;
+
+import javax.swing.text.Document;
+
+import org.jsoup.Jsoup;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+
+@Controller
+public class HomeController {
+
+	@RequestMapping(value = "/home.do", method = RequestMethod.GET)
+	public String home( ) {
+		return "home";
+	}
+	@RequestMapping(value = "/crawl.do", method = RequestMethod.GET)
+	public MeodelAndView crawl(ModelAndView model ) {
+		
+		String url = "https://sports.news.naver.com/wfootball/index.nhn";
+		Document doc = null;
+		
+		try
+		{
+			doc = Jsoup.connect(url).get();
+		}
+		catch(IOException e) 
+		{
+			e.printStackTrace();
+		}
+		return "home";
+	}
+}

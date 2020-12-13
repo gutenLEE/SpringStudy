@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sp.ex.mapper.MemberMapper">
+
+    <select id="viewAll" resultType="com.spring.springBatis.MemberDTO">
+        SELECT * FROM student
+    </select>
+
+    <insert id="insertMember" parameterType="com.spring.springBatis.MemberDTO">
+        Insert into student(hakbun, irum, password) values(#{hakbun}, #{irum}, #{password})
+    </insert>
+</mapper>

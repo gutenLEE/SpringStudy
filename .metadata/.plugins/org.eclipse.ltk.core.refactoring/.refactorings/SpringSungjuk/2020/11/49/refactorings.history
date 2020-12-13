@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;reuslt2&apos; in &apos;com.spring.springSungjuk.SungjukDAO.deleteSungjuk(...)&apos; to &apos;result2&apos;&#x0D;&#x0A;- Original project: &apos;SpringSungjuk&apos;&#x0D;&#x0A;- Original element: &apos;com.spring.springSungjuk.SungjukDAO.deleteSungjuk(String).reuslt2&apos;&#x0D;&#x0A;- Renamed element: &apos;reuslt2&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;reuslt2&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src\/main\/java&lt;com.spring.springSungjuk{SungjukDAO.java[SungjukDAO~deleteSungjuk~QString;@reuslt2!4515!4530!4519!4525!I!0!false" name="result2" references="true" stamp="1606645576305" version="1.0"/>
+</session>

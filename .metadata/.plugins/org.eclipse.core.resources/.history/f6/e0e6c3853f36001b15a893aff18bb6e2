@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 
+	int getListCount();
+	List<BoardVO> getBoardList(int page,int limit);
+	BoardVO getDetail(int num);
+	boolean boardInsert(BoardVO board);
+	int boardReply(BoardVO board);
+	BoardVO boardModifyForm(int num);
+	boolean boardModify(BoardVO modifyboard);
+	boolean boardDelete(int num, String id);
+	void setReadCountUpdate(int num);
+	boolean isBoardWriter(int num,String id);
+	boolean boardDelete(int num);
+	
+	NUM       NOT NULL NUMBER         
+	ID                 VARCHAR2(20)   
+	SUBJECT            VARCHAR2(50)   
+	CONTENT            VARCHAR2(2000) 
+	ORG_FILE           VARCHAR2(50)   
+	UP_FILE            VARCHAR2(50)   
+	RE_REF             NUMBER         
+	RE_LEV             NUMBER         
+	RE_SEQ             NUMBER         
+	READCOUNT          NUMBER         
+	BOARDDATE          DATE         
+	
+	
+-->
+<!-- namespace="com.spring.mapper.MemberMapper는 MemberMapper인퍼페이스(MemberMapper.class)의 이름을 사용한다. -->
+<mapper namespace="com.spring.mapper.BoardMapper">
+
+	
+	<!--######### 여기부터 내 쿼리 ######### -->
+	<select id="getListCount" resultType="int">
+		SELECT count(*) FROM smemberboard2
+	</select>
+	
+	<select id="getBoardList"  parameterType="int"  resultType="BoardVO">
+		SELECT * 
+		FROM 
+		(select rownum rnum, num, id, subject, content, re_ref, re_lev, re_seq, readcount, boarddate 
+			FROM 
+			(select * from smemberboard2 order by re_ref desc,re_seq asc)) 
+		WHERE <![CDATA[rnum >= #{startrow}]]> and <![CDATA[rnum <= #{endrow}]]>
+	</select>
+	
+	<select id="getDetail" parameterType="int" resultType="BoardVO">
+		select * from smemberboard2 where num = #{num} 
+		<!-- Mapper에서 int로 넣어줬어도 문자로 인식되는 경우가 있기 때문에 javatype을 명시해줘야 한다. -->
+	</select>
+	
+	<insert id="boardInsert" parameterType="com.spring.mb2replay.board.BoardVO">
+		<selectKey resultType="int" keyProperty="num" order="BEFORE"> 
+	        SELECT max(num)+1 FROM smemberboard2      
+	    </selectKey>  
+		INSERT INTO 
+		smemberboard2 (num, id, subject, content, org_file, up_file, re_ref, re_lev, re_seq, readcount, boarddate) 
+		VALUES (#{num}, #{id}, #{subject}, #{content}, #{org_file}, #{up_file}, #{num}, #{re_lev}, #{re_seq}, #{readcount}, sysdate)
+	</insert>
+	
+	<!-- 
+	version 2.
+	<insert id="boardInsert" parameterType="BoardVO">
+		<if test = "num==''">
+			INSERT into smemberboard2 values(1, #{id}, #{subject}, #{content}, #{org_file}, #{up_file}, #{re_ref}. #{re_lev}, #{re_seq}, #{readcount}, sysdate)
+		</if>
+		<if test="num != '' ">
+			insert into smemberboard2 values((select max(num)+1 as num from smemberboard2), 
+			#{id}, #{subject}, #{content}, #{org_file}, #{up_file}, #{re_ref}. #{re_lev}, #{re_seq}, #{readcount}, sysdate)
+		</if>
+	</insert>
+	 -->
+	 
+	 <!-- 
+	 version 3.
+	 
+	 <insert id="boardInsert" parameterType="BoardVO">
+	 	<selectKey resultType="int" keyProperty="num" order="BEFORE"> 
+	        <if test = "num==''"> select 1 from dual  </if>
+	        <if test="num != '' "> select max(num)+1 from smemberboard2  </if> 
+	    </selectKey>  
+	    insert into smemberboard2 values ( #{num}, #{id}, #{subject}, #{content}, #{org_file}, #{up_file}, #{num}, #{re_lev}, #{re_seq}, #{readcount}, sysdate )
+	 </insert>
+	  -->
+	
+	<update id="boardReplyupdate" parameterType="BoardVO">
+		update smemberboard2 set re_seq=re_seq+1 where re_ref= #{re_ref} and re_seq > #{re_seq}
+	</update>
+	
+	<insert id="boardReply" parameterType="BoardVO">
+		<!-- selectKey는 insert 구문에서만 사용  , order값은 BEFORE, AFTER 대문자 사용-->
+		<selectKey resultType="int" keyProperty="num" order="BEFORE"> 
+	        SELECT max(num)+1 FROM smemberboard2      
+	    </selectKey>  
+		INSERT INTO smemberboard2 (num, id, subject, content, re_ref, re_lev, re_seq, readcount, boarddate )
+		VALUES (#{num}, #{id}, #{subject}, #{content}, #{re_ref}, #{re_lev} + 2, #{re_seq}, #{readcount}, sysdate)
+	</insert>
+	
+	
+	<select id="setReadCountUpdate" parameterType="int" >
+		UPDATE smemberboard2 set readcount = readcount+1 where num = #{num}
+	</select>
+	
+	<update id="boardModify" parameterType="BoardVO">
+		UPDATE smemberboard2 
+		SET subject= #{subject}, content = #{content} where num = #{num}
+	</update>
+	
+	<delete id="boardDelete" parameterType="hashmap">
+		DELETE from smemberboard2 where num = #{num}
+	</delete>
+
+
+</mapper>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;element&apos; in &apos;com.spring.springjsoup.HomeController.crawl2(...)&apos; to &apos;tableElement&apos;&#x0D;&#x0A;- Original project: &apos;SpringJSoup&apos;&#x0D;&#x0A;- Original element: &apos;com.spring.springjsoup.HomeController.crawl2(ModelAndView).element&apos;&#x0D;&#x0A;- Renamed element: &apos;element&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;element&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src\/main\/java&lt;com.spring.springjsoup{HomeController.java[HomeController~crawl2~QModelAndView;@element!2495!2546!2504!2510!QElements;!0!false" name="tableElement" references="true" stamp="1607751706589" version="1.0"/>
+</session>

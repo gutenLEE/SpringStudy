@@ -1,0 +1,26 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+body{
+	background : pink;
+}
+textarea{
+	width : 90%;
+	height : 80vh;
+	
+}
+
+</style>
+</head>
+<body>
+
+		<input type="text" id="input" placeholder="input message....." size="55"/>
+		<button id="send_button">Send</button>
+		<textarea name="" id="" cols="30" rows="10"></textarea>
+</body>
+</html>

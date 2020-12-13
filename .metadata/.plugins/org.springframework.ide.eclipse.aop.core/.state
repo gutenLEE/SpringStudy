@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="SpringJSoup"/>
+<aop-project name="springAjax"/>
+<aop-project name="SpringMybatisMB2Replay"/>
+<aop-project name="SpringTest2"/>
+<aop-project name="SpringForm"/>
+<aop-project name="KaKaoLogin"/>
+<aop-project name="Empajax2"/>
+<aop-project name="SpringMemberBoard2"/>
+<aop-project name="SpringSungjuk"/>
+<aop-project name="SpringGmarket"/>
+<aop-project name="Springwebsocket2"/>
+<aop-project name="SpringMember"/>
+<aop-project name="SpringMybatis"/>
+<aop-project name="SpringTest3"/>
+<aop-project name="MyChat"/>
+<aop-project name="SpringFileUpload1"/>
+<aop-project name="SpringAjax3"/>
+<aop-project name="spring-petclinic"/>
+<aop-project name="SpringBatis"/>
+<aop-project name="SpringBatis2"/>
+</aop-reference-model>

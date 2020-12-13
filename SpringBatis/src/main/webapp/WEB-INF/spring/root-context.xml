@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	 <bean class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+        id="dataSource">
+        <property value="oracle.jdbc.driver.OracleDriver"
+            name="driverClassName" />
+        <property value="jdbc:oracle:thin:@localhost:1521:orcl"
+            name="url" />
+        <property value="scott" name="username" />
+        <property value="123456" name="password" />
+    </bean>
+
+
+    <bean class="org.mybatis.spring.SqlSessionFactoryBean"
+        id="SqlSessionFactory">
+        <property name="dataSource" ref="dataSource" />
+        <!-- classpath: 위치에 mybatis-config파일을 만들어줘야함 -->
+        <property value="classpath:mybatis-config.xml"
+            name="configLocation" />
+        <!-- classpath: 위치에 Mapper파일을 만들어줘야함 -->
+        <property value="classpath:/mapper/*Mapper.xml"
+            name="mapperLocations" />
+    </bean>
+
+    <!-- 이 부분에서 에러가 발생하는건 정상임 -->
+    <mybatis-spring:scan base-package="com.spring.springBatis.mapper(당신의 mapper자바 폴더 위치_폴더를 지금 만드시면 됩니다.)"/>
+</beans>

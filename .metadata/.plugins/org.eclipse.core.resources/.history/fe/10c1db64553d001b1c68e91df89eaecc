@@ -1,0 +1,23 @@
+import com.spring.springtobi.Chapter1.User;
+import com.spring.springtobi.Chapter1.UserDAO;
+
+public class userDAOtest {
+
+	public static void main(String[] args) {
+		
+		UserDAO dao = new UserDAO();
+		
+		User user = new User();
+		user.setId("gutenTag");
+		user.setName("LEE");
+		user.setPassword("123");
+		
+		dao.add(user);
+		
+		System.out.println(user.getId() + " 등록 성공");
+		
+		User user2 = dao.get(user.getId());
+		System.out.println(user2.getName());
+	}
+
+}

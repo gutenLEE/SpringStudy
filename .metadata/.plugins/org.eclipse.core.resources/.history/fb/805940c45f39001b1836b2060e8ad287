@@ -1,0 +1,7 @@
+package com.spring.mychat;
+
+import org.springframework.web.socket.server.support.HttpSessionHandshakeInterceptor;
+
+public class HandshakeInterceptor extends HttpSessionHandshakeInterceptor {
+
+}

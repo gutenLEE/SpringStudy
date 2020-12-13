@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Mybatis 공통 환경 설정 -->
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+ 
+<configuration>
+    <typeAliases>
+        <!-- <typeAlias alias="dept" type="com.board.dto.Dept"/>
+        <typeAlias alias="board" type="com.board.dto.board"/>
+        <typeAlias alias="member" type="com.board.dto.member"/> -->
+        <package name="com.spring.springBatis"/>
+    </typeAliases>
+    
+    <!-- dao안에 mapper까지 넣어두고 쓰는 방법 -->
+    <mappers>
+        <mapper resource="com/board/dao/memberMapper.xml"/>
+        <mapper resource="com/board/dao/boardMapper.xml"/>
+    </mappers>
+ 
+</configuration>

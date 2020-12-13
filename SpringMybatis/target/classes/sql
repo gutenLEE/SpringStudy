@@ -1,0 +1,12 @@
+create table tap_mybatis(
+    id varchar2(15) primary key,
+    name varchar2(15),
+    email varchar2(50),
+    phone varchar2(15)
+);
+
+insert into tap_mybatis values ('A001', '이기자', 'A001@daum.net', '010-1111-1111');
+insert into tap_mybatis values ('A002', '김기자', 'A002@daum.net', '010-2222-2222');
+insert into tap_mybatis values ('A003', '박기자', 'A003@daum.net', '010-3333-3333');
+insert into tap_mybatis values ('A004', '길기자', 'A004@daum.net', '010-4444-4444');
+insert into tap_mybatis values ('A005', '홍기자', 'A005@daum.net', '010-5555-5555');

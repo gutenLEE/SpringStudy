@@ -1,0 +1,39 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+  <link rel="stylesheet" href="reset.css">
+    <style>
+        .main-container{
+            background:#262626;
+            width: 500px;
+            height: 600px;
+            position: relative;
+            margin: 0 auto;
+            margin-top: 23px;
+            border-radius: 8px;
+        }
+        .element {
+		  clip: rect(10px, 20px, 30px, 40px);
+		}
+		input{
+			font-color : white;
+		}
+    </style>
+</head>
+<body>
+  <section>
+      <div class="main-container">
+      	<form action="">
+      		<div class="box">      		
+	      		ID <input type="text" name = "id"/>
+	      		PW <input type="text" name = "pw"/>
+      		</div>
+      	</form>
+      </div>
+  </section>
+</body>
+</html>

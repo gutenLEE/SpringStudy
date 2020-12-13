@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	 
+	 
+<mapper namespace="com.spring.mapper.MemberMapper">
+	<!-- HashMap 이용시 추가부분 -->
+	<resultMap type="java.util.HashMap" id="hashmapVO">
+		<result property="hakbun" column="hakbun" />
+		<result property="irum" column="irum" />
+		<result property="password" column="password" />
+	</resultMap>
+	
+	<!--
+	ArrayList<MemberVO> getStudents();
+	HashMap<String, String> findByHakbun(String hakbun);
+	int insertStudent(MemberVO member);
+	  -->
+	  
+	<select id="findByHakbun" resultType="MemberVO" parameterType="String">
+		SELECT * FROM student where id #{hakbun, javaType=String}
+	</select>
+	
+	<select id="getStudents" resultType="hashmapVO">
+		select * FROM student
+	</select>
+	
+	<insert id="insertStudent" parameterType="MemberVO">
+		INSERT INTO student VALUES (#{hakbun, javaType=String}, #{irum, javaType=String}, #{password, javaType=String})
+	</insert>
+	
+	  
+</mapper>

@@ -1,0 +1,29 @@
+package com.spring.springwebsocket2;
+
+import java.util.HashSet;
+import java.util.Set;
+
+import org.springframework.web.socket.CloseStatus;
+import org.springframework.web.socket.WebSocketSession;
+import org.springframework.web.socket.handler.TextWebSocketHandler;
+
+public class SocketHandler extends TextWebSocketHandler {
+	
+	private Set<WebSocketSession> sessionSet = new HashSet<WebSocketSession>();
+	
+	public SocketHandler() {
+		super();
+	}
+	
+	public void afterConnectionClosed(WebSocketSession session, CloseStatus status) throws Exception{
+		super.afterConnectionClosed(session, status);
+		sessionSet.remove(session);
+	}
+	
+	public void afterConnectionEstablished(WebSocketSession session) throws Exception{
+		super.afterConnectionEstablished(session);
+		sessionSet.add(session);
+	}
+	
+	
+}

@@ -1,0 +1,5 @@
+package com.spring.mb2replay.comment;
+
+public class CommentVO {
+
+}

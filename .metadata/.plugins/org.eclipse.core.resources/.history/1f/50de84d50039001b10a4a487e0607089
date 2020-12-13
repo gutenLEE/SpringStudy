@@ -1,0 +1,5 @@
+package com.spring.springwebsocket2;
+
+public class MemberService {
+
+}

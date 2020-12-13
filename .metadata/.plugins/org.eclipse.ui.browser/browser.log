@@ -1,0 +1,34 @@
+
+11월 29, 2020 17:26:30.59 NEW SESSION
+11월 29, 2020 17:26:30.59 [5860:10516:1129/172630.591:ERROR:device_event_log_impl.cc(211)] [17:26:30.592] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+11월 29, 2020 17:28:09.63 [5860:10516:1129/172809.632:ERROR:device_event_log_impl.cc(211)] [17:28:09.631] USB: usb_service_win.cc:258 Failed to get device driver name: 요소가 없습니다. (0x490)
+11월 29, 2020 17:36:27.25 [1129/173627.250:ERROR:directory_reader_win.cc(43)] FindFirstFile: 지정된 경로를 찾을 수 없습니다. (0x3)
+
+12월 03, 2020 15:50:45.72 NEW SESSION
+12월 03, 2020 15:50:45.72 [2032:28184:1203/155045.719:ERROR:device_event_log_impl.cc(211)] [15:50:45.719] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+12월 03, 2020 15:52:01.32 [30424:3472:1203/155201.321:ERROR:device_event_log_impl.cc(211)] [15:52:01.321] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+12월 03, 2020 15:56:34.85 [63308:69200:1203/155634.855:ERROR:device_event_log_impl.cc(211)] [15:56:34.855] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+12월 03, 2020 16:06:26.44 [1203/160626.444:ERROR:directory_reader_win.cc(43)] FindFirstFile: 지정된 경로를 찾을 수 없습니다. (0x3)
+12월 03, 2020 16:10:25.62 [24900:27048:1203/161025.620:ERROR:device_event_log_impl.cc(211)] [16:10:25.621] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+12월 03, 2020 16:20:22.60 [1203/162022.599:ERROR:directory_reader_win.cc(43)] FindFirstFile: 지정된 경로를 찾을 수 없습니다. (0x3)
+12월 03, 2020 16:30:00.70 [56596:25900:1203/163000.709:ERROR:device_event_log_impl.cc(211)] [16:30:00.708] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+12월 03, 2020 16:34:09.67 [70004:17992:1203/163409.670:ERROR:device_event_log_impl.cc(211)] [16:34:09.670] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+12월 03, 2020 16:43:58.54 [1203/164358.537:ERROR:directory_reader_win.cc(43)] FindFirstFile: 지정된 경로를 찾을 수 없습니다. (0x3)
+
+12월 04, 2020 20:45:44.24 NEW SESSION
+12월 04, 2020 20:45:44.24 [73576:22672:1204/204544.244:ERROR:device_event_log_impl.cc(211)] [20:45:44.245] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+12월 04, 2020 20:55:33.18 [1204/205533.183:ERROR:directory_reader_win.cc(43)] FindFirstFile: 지정된 경로를 찾을 수 없습니다. (0x3)
+12월 04, 2020 21:22:28.06 [73576:22672:1204/212228.067:ERROR:device_event_log_impl.cc(211)] [21:22:28.066] USB: usb_service_win.cc:258 Failed to get device driver name: 요소가 없습니다. (0x490)
+12월 04, 2020 22:36:13.92 [73576:22672:1204/223613.924:ERROR:device_event_log_impl.cc(211)] [22:36:13.923] USB: usb_service_win.cc:258 Failed to get device driver name: 요소가 없습니다. (0x490)
+12월 05, 2020 08:46:48.55 [31892:80156:1205/084648.558:ERROR:device_event_log_impl.cc(211)] [08:46:48.558] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+
+12월 08, 2020 20:44:40.84 NEW SESSION
+12월 08, 2020 20:44:40.84 [18740:31984:1208/204440.841:ERROR:device_event_log_impl.cc(211)] [20:44:40.840] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+12월 08, 2020 20:54:33.19 [1208/205433.191:ERROR:directory_reader_win.cc(43)] FindFirstFile: 지정된 경로를 찾을 수 없습니다. (0x3)
+12월 08, 2020 22:15:11.63 [18740:31984:1208/221511.632:ERROR:device_event_log_impl.cc(211)] [22:15:11.633] USB: usb_service_win.cc:258 Failed to get device driver name: 요소가 없습니다. (0x490)
+12월 09, 2020 01:54:00.51 [18740:31984:1209/015400.511:ERROR:device_event_log_impl.cc(211)] [01:54:00.510] USB: usb_service_win.cc:258 Failed to get device driver name: 요소가 없습니다. (0x490)
+12월 09, 2020 03:47:10.73 [18740:4992:1209/034710.733:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -105
+12월 09, 2020 07:26:38.62 [18740:4992:1209/072638.621:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+12월 09, 2020 07:26:38.62 [18740:25332:1209/072638.625:ERROR:get_updates_processor.cc(256)] PostClientToServerMessage() failed during GetUpdates with error 2
+12월 09, 2020 07:26:40.53 [18740:31984:1209/072640.534:ERROR:device_event_log_impl.cc(211)] [07:26:40.534] USB: usb_service_win.cc:258 Failed to get device driver name: 요소가 없습니다. (0x490)
+12월 09, 2020 07:50:23.77 [18740:31984:1209/075023.770:ERROR:device_event_log_impl.cc(211)] [07:50:23.769] USB: usb_service_win.cc:258 Failed to get device driver name: 요소가 없습니다. (0x490)
