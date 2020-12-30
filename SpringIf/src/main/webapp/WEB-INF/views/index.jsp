@@ -24,6 +24,44 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/jquery-ui.min.css" type="text/css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css" type="text/css">
+    
+    <!-- 유희 로그인 session 코드 -->
+    <script>
+    	document.addEventListener("DOMContentLoaded", function() {
+
+    		session_flag = sessionStorage.length;
+    		console.log(session_flag);
+    		
+    		/* 로그인 여부 체크 */
+    		if(session_flag == 1){
+    			var loginPanel =  document.querySelector('.login-panel');
+				
+    			console.log(loginPanel);
+    			loginPanel.innerText = '';
+    			loginPanel.innerText = '로그아웃';
+    		}
+    		
+    		
+			var loginPanel =  document.querySelector('.login-panel');
+    		
+    		/* 로그인, 로그아웃 클릭시 세션 처리  */
+    		loginPanel.addEventListener('click', function(){
+    			
+    			if(loginPanel.innerText == '로그아웃'){
+    				event.preventDefault();
+    				sessionStorage.clear();
+    				window.location.href = "index";
+    			}
+    			else{
+    				window.location.href = "login";
+    			}
+    		});
+    		
+    	});
+
+    </script>
+    <!-- !유희 로그인 session id 테스트 코드 -->
+    
 </head>
 
 <body>
@@ -36,7 +74,7 @@
     <header class="header-section">
         <div class="header-top">
             <div class="container">
-                <!-- <div class="ht-left">
+               <!--  <div class="ht-left">
                     <div class="mail-service">
                         <i class=" fa fa-envelope"></i>
                         hello.if@gmail.com
@@ -46,10 +84,11 @@
                         +82 10.1234.1234
                     </div>
                 </div> -->
+                
                 <div class="ht-right">
-                   <!--  <a href="login" class="login-panel"><i class="fa fa-user"></i>로그인</a>
-                    <a href="join" class="join-panel"><i class="fa fa-user"></i>회원가입</a> -->
-                    <!-- <div class="lan-selector">
+                   <a href="join" class="join-panel"><i class="fa fa-user"></i>회원가입</a>
+                   <a href="#" class="login-panel"><i class="fa fa-user"></i>로그인</a>
+                   <!--  <div class="lan-selector">
                         <select class="language_drop" name="countries" id="countries" style="width:300px;">
                             <option value='yt' data-image="img/flag-1.jpg" data-imagecss="flag yt"
                                 data-title="English">English</option>
@@ -57,12 +96,12 @@
                                 data-title="Bangladesh">German </option>
                         </select>
                     </div> -->
-                    <!-- <div class="top-social">
+                     <div class="top-social">
                         <a href="#"><i class="ti-facebook"></i></a>
                         <a href="#"><i class="ti-twitter-alt"></i></a>
                         <a href="#"><i class="ti-linkedin"></i></a>
                         <a href="#"><i class="ti-pinterest"></i></a>
-                    </div> -->
+                    </div> 
                 </div>
             </div>
         </div>

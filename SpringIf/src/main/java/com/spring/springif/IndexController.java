@@ -14,7 +14,7 @@ public class IndexController {
 	
 	@RequestMapping("/index")
 	public String index1() {
-		
+		System.out.println("index in");
 		return "index";
 	}
 	@RequestMapping("/index3")

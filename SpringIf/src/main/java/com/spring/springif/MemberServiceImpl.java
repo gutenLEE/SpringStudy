@@ -17,6 +17,8 @@ public class MemberServiceImpl implements MemberService{
 		
 		MemberMapper memberMapper = sqlSession.getMapper(MemberMapper.class);
 		int count = memberMapper.loginCheck(id, pw);
+		System.out.println("count => " + count);
+		
 		int state = 0;
 		
 		if(count == 1) {
